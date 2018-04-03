@@ -40,8 +40,6 @@ body {
 
 .card-front {
     position: absolute;
-    width: 600px;
-    height: 320px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 125px 70px 125px;
@@ -264,28 +262,127 @@ body {
     color: #6d7389;
 }
 
-/* BACK */
+/* BACK LEFT */
 
-.card-back-left,
-.card-back-right {
+.card-back-left {
     position: absolute;
-    width: 600px;
-    height: 320px;
     border-width: 3px;
     border-style: solid;
     box-sizing: content-box;
-}
-
-.card-back-left {
     background-color: #e06666;
     border-color: #e06666;
 }
 
+/* BACK RIGHT */
+
 .card-back-right {
+    position: absolute;
     background-color: #93c47d;
+    border-width: 3px;
+    border-style: solid;
     border-color: #93c47d;
+    box-sizing: content-box;
 }
 
+.card-back-right-inputs {
+    margin: 20px;
+    height: 280px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+.card-back-right .state {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.card-back-right .referent {
+    grid-area: 1 / 2 / span 1 / span 1;
+}
+
+.card-back-right .projects {
+    grid-area: 2 / 1 / span 1 / span 2;
+}
+
+.card-back-right .commentaries {
+    grid-area: 3 / 1 / span 1 / span 2;
+}
+
+.card-back-right .cancel {
+    grid-area: 4 / 1 / span 1 / span 1;
+}
+
+.card-back-right .submit {
+    grid-area: 4 / 2 / span 1 / span 1;
+}
+
+.card-back-right .state,
+.card-back-right .referent,
+.card-back-right .projects,
+.card-back-right .commentaries,
+.card-back-right .cancel,
+.card-back-right .submit {}
+
+.card-back-right .state select,
+.card-back-right .referent select {
+    width: 165px;
+}
+
+.card-back-right .projects select {
+    width: 450px;
+}
+
+
+
+/* CARDS INPUTS */
+
+.card-back-left label,
+.card-back-right label {
+    float: left;
+    width: 110px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    background-color: #d9d9d9;
+}
+
+.card-back-left select,
+.card-back-right select {
+    display: inline-block;
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+}
+
+.card-back-left textarea,
+.card-back-right textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    padding: 15px;
+}
+
+.card-back-left button,
+.card-back-right button {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #d9d9d9;
+}
+
+.card-back-left button:hover,
+.card-back-right button:hover {
+    background-color: white;
+}
+
+.card-back-right .submit button {
+    font-weight: bold;
+}
 
 /* FLIP */
 
@@ -304,7 +401,7 @@ body {
 /* flip speed goes here */
 
 .card-flipper {
-    transition: 0.6s;
+    transition: 1s;
     transform-style: preserve-3d;
     position: relative;
 }
