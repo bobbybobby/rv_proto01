@@ -96,14 +96,18 @@ body {
 }
 
 .card-middle {
-    width: 600px;
+    position: relative;
+    width: 500px;
     height: 70px;
-    padding-left: 75px;
-    padding-right: 75px;
-    display: grid;
-    grid-template-columns: repeat(3, 150px);
-    grid-template-rows: 70px;
+    display: flex;
+    padding-left: 20px;
     background-color: #e3ebf1;
+}
+
+.card-middle .card-highlight {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
 }
 
 .card-highlight {}
@@ -112,8 +116,8 @@ body {
     float: left;
     width: 30px;
     height: 30px;
-    margin: 20px;
     opacity: 0.5;
+    margin-right: 10px;
 }
 
 .card-highlight p {
@@ -124,125 +128,39 @@ body {
     color: #858c9f;
 }
 
+.card-middle .buttons {
+  display: flex;
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+}
+
+.card-middle .buttons .button {
+  height: 40px;
+  width: 40px;
+  background-size: 15px;
+  border-radius: 100%;
+  border: solid 3px white;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.card-middle .buttons .button.no {
+  background-color: #e06666;
+  background-image: url('../img/no.png');
+}
+
+.card-middle .buttons .button.yes {
+  background-color: #93c47d;
+  background-image: url('../img/yes.png');
+}
+
+
 .card-bottom {
-    width: 600px;
+    width: 500px;
     height: 125px;
-    display: grid;
-    grid-template-columns: 100px 400px 100px;
 }
 
-.card-button-left,
-.card-button-right {
-    position: relative;
-}
-
-/* BUTTONS HIDERS */
-
-.card-button-left .card-triangle-button,
-.card-button-right .card-triangle-button {
-    position: absolute;
-    background-color: blue;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0;
-}
-
-.card-button-left .card-triangle-button:nth-of-type(1) {
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-}
-
-.card-button-left .card-triangle-button:nth-of-type(2) {
-    bottom: 0;
-    left: 50px;
-    width: 30px;
-    height: 30px;
-}
-
-.card-button-left .card-triangle-button:nth-of-type(3) {
-    bottom: 50px;
-    left: 0;
-    width: 30px;
-    height: 30px;
-}
-
-.card-button-right .card-triangle-button:nth-of-type(1) {
-    bottom: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-}
-
-.card-button-right .card-triangle-button:nth-of-type(2) {
-    bottom: 0;
-    right: 50px;
-    width: 30px;
-    height: 30px;
-}
-
-.card-button-right .card-triangle-button:nth-of-type(3) {
-    bottom: 50px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-}
-
-/* END */
-
-.card-button-left .card-triangle,
-.card-button-right .card-triangle {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-top: 40px solid transparent;
-    transition: border-width 0.5s;
-}
-
-.card-button-left .card-triangle {
-    left: 0;
-    border-left: 40px solid #e06666;
-    border-right: 40px solid transparent;
-    border-bottom: 40px solid #e06666;
-}
-
-.card-button-right .card-triangle {
-    right: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid #93c47d;
-    border-bottom: 40px solid #93c47d;
-}
-
-.card-triangle-button:hover ~ .card-triangle {
-    border-width: 50px;
-    transition: border-width 0.5s;
-}
-
-.card-button-left img,
-.card-button-right img {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    bottom: 15px;
-    opacity: 0.75;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.card-triangle-button:hover ~ img {
-    opacity: 0.75;
-    transition: opacity 0.5s;
-}
-
-.card-button-left img {
-    left: 15px;
-}
-
-.card-button-right img {
-    right: 15px;
-}
 
 .card-presentation {
     vertical-align: middle;
@@ -394,7 +312,7 @@ body {
 .card-front,
 .card-back-left,
 .card-back-right {
-    width: 600px;
+    width: 500px;
     height: 320px;
 }
 
