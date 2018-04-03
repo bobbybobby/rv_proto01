@@ -1,0 +1,339 @@
+@font-face {
+    font-family: "Roboto condensed";
+    src: url('../fonts/RobotoCondensed-Regular.ttf');
+}
+
+/*----------| DEFAULT POSITIONINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*----------| DEFAULT TEXTS */
+
+* {
+    font-family: "Roboto condensed", "Arial", sans-serif;
+    font-size: 1em;
+    color: #666;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.results {
+    width: 100%;
+    padding: 50px;
+}
+
+.card {
+    position: relative;
+    display: block;
+    margin: 40px auto;
+}
+
+/* FRONT */
+
+.card-front {
+    position: absolute;
+    width: 600px;
+    height: 320px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 125px 70px 125px;
+    background-color: white;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #e3ebf1;
+    box-sizing: content-box;
+    /*box-shadow: 0px 0px 4px 1px rgba(150, 150, 150, 0.1);*/
+}
+
+.card-front:focus {
+    outline: none;
+    box-shadow: 0px 0px 15px 0px rgba(109, 115, 137, 0.5);
+}
+
+.card-top {
+    display: grid;
+    width: 550px;
+    height: 75px;
+    margin: 25px;
+    grid-template-columns: 75px 455px;
+    grid-column-gap: 20px;
+}
+
+.card-img-wrapper {
+    width: 75px;
+    height: 75px;
+}
+
+.card-img-wrapper img {
+    width: 75px;
+    height: 75px;
+    background-color: blue;
+}
+
+.card-title {
+    width: 455px;
+    height: 75px;
+    text-align: left;
+}
+
+.card-title p {
+    height: 37.5px;
+    line-height: 37.5px;
+    font-size: 0.9em;
+    color: #6d7288;
+}
+
+.card-title p:first-child {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #363940;
+}
+
+.card-middle {
+    width: 600px;
+    height: 70px;
+    padding-left: 75px;
+    padding-right: 75px;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: 70px;
+    background-color: #e3ebf1;
+}
+
+.card-highlight {}
+
+.card-highlight img {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    opacity: 0.5;
+}
+
+.card-highlight p {
+    float: left;
+    line-height: 70px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #858c9f;
+}
+
+.card-bottom {
+    width: 600px;
+    height: 125px;
+    display: grid;
+    grid-template-columns: 100px 400px 100px;
+}
+
+.card-button-left,
+.card-button-right {
+    position: relative;
+}
+
+/* BUTTONS HIDERS */
+
+.card-button-left .card-triangle-button,
+.card-button-right .card-triangle-button {
+    position: absolute;
+    background-color: blue;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+}
+
+.card-button-left .card-triangle-button:nth-of-type(1) {
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.card-button-left .card-triangle-button:nth-of-type(2) {
+    bottom: 0;
+    left: 50px;
+    width: 30px;
+    height: 30px;
+}
+
+.card-button-left .card-triangle-button:nth-of-type(3) {
+    bottom: 50px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.card-button-right .card-triangle-button:nth-of-type(1) {
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.card-button-right .card-triangle-button:nth-of-type(2) {
+    bottom: 0;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+}
+
+.card-button-right .card-triangle-button:nth-of-type(3) {
+    bottom: 50px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+/* END */
+
+.card-button-left .card-triangle,
+.card-button-right .card-triangle {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    transition: border-width 0.5s;
+}
+
+.card-button-left .card-triangle {
+    left: 0;
+    border-left: 40px solid #e06666;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid #e06666;
+}
+
+.card-button-right .card-triangle {
+    right: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid #93c47d;
+    border-bottom: 40px solid #93c47d;
+}
+
+.card-triangle-button:hover ~ .card-triangle {
+    border-width: 50px;
+    transition: border-width 0.5s;
+}
+
+.card-button-left img,
+.card-button-right img {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    bottom: 15px;
+    opacity: 0.75;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.card-triangle-button:hover ~ img {
+    opacity: 0.75;
+    transition: opacity 0.5s;
+}
+
+.card-button-left img {
+    left: 15px;
+}
+
+.card-button-right img {
+    right: 15px;
+}
+
+.card-presentation {
+    vertical-align: middle;
+}
+
+.card-presentation p {
+    margin: 15px 25px;
+    height: 95px;
+    line-height: 95px;
+}
+
+.card-presentation p span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+    font-size: 1em;
+    color: #6d7389;
+}
+
+/* BACK */
+
+.card-back-left,
+.card-back-right {
+    position: absolute;
+    width: 600px;
+    height: 320px;
+    border-width: 3px;
+    border-style: solid;
+    box-sizing: content-box;
+}
+
+.card-back-left {
+    background-color: #e06666;
+    border-color: #e06666;
+}
+
+.card-back-right {
+    background-color: #93c47d;
+    border-color: #93c47d;
+}
+
+
+/* FLIP */
+
+.card {
+    perspective: 5000px;
+}
+
+.card,
+.card-front,
+.card-back-left,
+.card-back-right {
+    width: 600px;
+    height: 320px;
+}
+
+/* flip speed goes here */
+
+.card-flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* hide back of pane during swap */
+
+.card-front,
+.card-back-left,
+.card-back-right {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+
+.card-front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+
+.card-back-left {
+    transform: rotateY(180deg);
+}
+
+.card-back-right {
+    transform: rotateY(180deg);
+}
